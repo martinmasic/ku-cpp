@@ -23,7 +23,6 @@
       buildInputs =
       [
         clang_19
-
       ];
 
     };

@@ -1,1 +1,4 @@
 .direnv/
+src/*.pch
+src/*.o
+bin/*
