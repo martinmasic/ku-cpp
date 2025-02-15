@@ -31,6 +31,8 @@ namespace Generator {
 
     const std::vector<char> LegalValues = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
+    const char emptyValue = '.';
+
     /*
     ** Print board content to standard output
      */
@@ -85,7 +87,7 @@ namespace Generator {
         // TODO: a prettier way to do this? (initialization)
         for (int i = 0; i < 9; ++i)
             for (int j = 0; j < 9; ++j)
-                board[i][j] = '0'; // alternative: '_'
+                board[i][j] = Generator::emptyValue;
         return board;
     }
 
@@ -113,12 +115,12 @@ namespace Generator {
                 if (pos == 0) {
                     std::cout << "Something is wrong!\n" << std::endl;
                     std::exit(-1);
-                } // TODO: better panic system
+                } // TODO: better panic system (maybe assert)
 
                 candidates[r][c] = LegalValues;
                 std::ranges::shuffle(candidates[r][c], rng);
 
-                board[r][c] = '0';
+                board[r][c] = Generator::emptyValue;
                 pos--;
                 continue;
             }
@@ -139,9 +141,8 @@ namespace Generator {
                         break;
                     }
             if (!invalid) {
-                auto squareNumber = (pos / 3 % 3 + 1) + (pos / 27 * 3);
-                auto l = ((squareNumber - 1) % 3) * 3;
-                auto u = (squareNumber - 1) / 3 * 3;
+                auto l = c - c % 3;
+                auto u = r - r % 3;
 
                 for (auto i = u; i < u + 3; ++i)
                     for (auto j = l; j < l + 3; ++j)

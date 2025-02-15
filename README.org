@@ -1,0 +1,15 @@
+#+title: Readme
+
+* ku
+
+** Description
+- My attempt at a general sudoku program.
+
+** Roadmap
+- [X] generate full board
+- [ ] generate valid puzzle from full board
+- [ ] option to specify difficulty of generated puzzle
+- [ ] other capabilities, yet to be determined
+- [ ] general CLI argument parsing
+- [ ] alternative build systems: make/ninja, cmake/autotools, zig
+- [ ] terminal application with a menu and submenus, solve history etc.
