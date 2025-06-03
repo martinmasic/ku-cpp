@@ -1,13 +1,13 @@
 #+title: Readme
 
-* ku
+* ku-cpp
 
 ** Description
-- My attempt at a general sudoku program.
+My attempt at a general sudoku program. Probably not going to finish, since it's C++.
 
 ** Roadmap
 - [X] generate full board
-- [ ] generate valid puzzle from full board
+- [X] generate valid puzzle from full board
 - [ ] option to specify difficulty of generated puzzle
 - [ ] other capabilities, yet to be determined
 - [ ] general CLI argument parsing

@@ -3,12 +3,12 @@
 #include <array>
 #include <random>
 
+#include "game.h"
+
 namespace Generator {
 
-    typedef std::array<std::array<char,9>,9> board;;
+    Game::Board generateFullBoard(std::default_random_engine rng);
 
-    void printBoard(board& board);
-
-    board generateFullBoard(std::default_random_engine rng);
+    Game::Board generateValidBoard(std::default_random_engine rng, int cluesNum);
 
 }

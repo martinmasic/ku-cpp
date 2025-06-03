@@ -23,6 +23,9 @@
       buildInputs =
       [
         clang_19
+        zig
+        ninja
+        meson
       ];
 
     };
